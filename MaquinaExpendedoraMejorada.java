@@ -25,6 +25,17 @@ public class MaquinaExpendedoraMejorada {
     }
 
     /**
+     * Nuevo Constructor
+     */
+    public MaquinaExpendedoraMejorada() {
+        precioBillete = 20;
+        balanceClienteActual = 0;
+        totalDineroAcumulado = 0;
+        estacionOrigen = "Leon";
+        estacionDestino = "Zamora";
+    }
+    
+    /**
      * Devuelve el precio del billete
      */
     public int getPrecioBillete() {
