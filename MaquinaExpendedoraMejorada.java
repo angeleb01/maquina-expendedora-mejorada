@@ -7,8 +7,6 @@ public class MaquinaExpendedoraMejorada {
     // El total de dinero almacenado en la maquina desde su ultimo vaciado
     private int totalDineroAcumulado;
     // El origen del billete
-    private int vaciarDineroDeLaMaquina;
-    // Vacia el dinero de la maquina
     private String estacionOrigen;
     // El destino del billete
     private String estacionDestino;
@@ -108,6 +106,7 @@ public class MaquinaExpendedoraMejorada {
         int vaciarDineroDeLaMaquina;
         vaciarDineroDeLaMaquina = totalDineroAcumulado + balanceClienteActual;
         balanceClienteActual = 0;
+        totalDineroAcumulado = 0;
         return vaciarDineroDeLaMaquina;
     }
 }
