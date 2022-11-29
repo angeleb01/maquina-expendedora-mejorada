@@ -7,6 +7,8 @@ public class MaquinaExpendedoraMejorada {
     // El total de dinero almacenado en la maquina desde su ultimo vaciado
     private int totalDineroAcumulado;
     // El origen del billete
+    private int vaciarDineroDeLaMaquina;
+    // Vacia el dinero de la maquina
     private String estacionOrigen;
     // El destino del billete
     private String estacionDestino;
@@ -53,7 +55,7 @@ public class MaquinaExpendedoraMejorada {
      * Simula la introduccion de dinero por parte del cliente actual
      */
     public void introducirDinero(int cantidadIntroducida) {
-        if (cantidadIntroducida > 0) {
+        if (cantidadIntroducida >= 0) {
             balanceClienteActual = balanceClienteActual + cantidadIntroducida;
         }
         else {
@@ -97,5 +99,15 @@ public class MaquinaExpendedoraMejorada {
         cantidadDeDineroADevolver = balanceClienteActual;
         balanceClienteActual = 0;
         return cantidadDeDineroADevolver;
-    } 
+    }
+    
+        /**
+     * Vacia el dinero introducido a la Maquina
+     */
+    public int vaciarDineroDeLaMaquina() {
+        int vaciarDineroDeLaMaquina;
+        vaciarDineroDeLaMaquina = totalDineroAcumulado + balanceClienteActual;
+        balanceClienteActual = 0;
+        return vaciarDineroDeLaMaquina;
+    }
 }
