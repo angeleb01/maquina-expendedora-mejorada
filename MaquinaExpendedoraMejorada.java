@@ -66,7 +66,7 @@ public class MaquinaExpendedoraMejorada {
      */
     public void introducirDinero(int cantidadIntroducida) {
         if (numeroBilletesVendidos == cantidadMaximaBilletes) {
-            System.out.println("No quedan Billetes para comprar.");
+            System.out.println("No quedan Billetes para comprar");
         }
         else {
             if (cantidadIntroducida >= 0) {
@@ -93,8 +93,9 @@ public class MaquinaExpendedoraMejorada {
                     System.out.println("# De " + estacionOrigen + " a " + estacionDestino);
                     System.out.println("# " + precioBillete + " euros.");
                     System.out.println("##################");
-                    System.out.println("Has conseguido un descuento de " + descuentoDeBillete + " euros en tu billete");
-
+                    if (numeroBilletesVendidos%4 == 3) {
+                        System.out.println("Has conseguido un descuento de " + descuentoDeBillete + " euros en tu billete");
+                    }
                     // Actualiza el total de dinero acumulado en la maquina
                     totalDineroAcumulado = totalDineroAcumulado + precioBillete;
                     // Reduce el balance del cliente actual dejandole seguir utilizando la maquina
